@@ -1,0 +1,4 @@
+.mypy_cache
+venv
+logs
+emissions.csv
