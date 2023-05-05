@@ -1,13 +1,12 @@
 import hyperfetch.tuning as hp  # type: ignore
 import yaml
 
-pruners = ["halving", "median", "patient", "percentile", "hyperband", "threshold", "none"]
-samplers = ["random", "cmaes", "nsgaii", "tpe"]
-environments_con = ["Pendulum-v1", "MountainCarContinuous-v0", ]
+pruners = ["halving", "median"]
+samplers = ["random", "cmaes", "tpe"]
+environments_con = ["Pendulum-v1"] #"MountainCarContinuous-v0" ] # "Pendulum-v1"
 environments_dis = ["Acrobot-v1", "CartPole-v1", "MountainCar-v0"]
-algs_con = ["sac", "td3", "a2c"] # done: ppo
+algs_con = ["td3", "sac"] # "a2c", "ppo",
 algs_dis = ["ppo", "a2c", "dqn"]
-
 
 def create_data_con(config_file):
     stream = open(config_file, 'r')
@@ -75,4 +74,4 @@ def create_data_dis(config_file):
 
 if __name__ == '__main__':
     create_data_con("tuning_parameters.yml")
-    create_data_dis("tuning_parameters.yml")
+    #create_data_dis("tuning_parameters.yml")
